@@ -43,7 +43,7 @@ def main():
 
     # next, place the words on the canvas based on the spiral pattern
     layout_words = {}  # word: (x, y, font_size)
-    layout(canvas, layout_words, font_sizes,padding=7)
+    layout(canvas, layout_words, font_sizes,padding=7,min_size=20,max_size=85)
 
     # finally, output the result 
     canvas.show()

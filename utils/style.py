@@ -57,6 +57,7 @@ def create_canvas(width=800, height=600, color=(255, 255, 255),file_path=None,th
 
 # use a font cache to speed up font loading
 font_cache = {}
+
 def get_font(font_name, font_size):
     if font_name not in font_cache:
         font_cache[font_name] = {}
@@ -71,3 +72,47 @@ def get_font(font_name, font_size):
             font = ImageFont.load_default()
         font_cache[font_name][font_size] = font
         return font
+    
+
+
+# create color select 
+
+def size_to_color1(size, min_size, max_size):
+    t = (size - min_size) / (max_size - min_size)
+    r = int(80 + 150 * t)
+    g = int(50 + 150 * (1 - t))
+    b = int(150 + 105 * (1 - t))
+    return (r, g, b)
+
+import colorsys
+def size_to_color(size, min_size, max_size):
+    t = (size - min_size) / (max_size - min_size)
+    
+    # 色相从蓝 → 红（更醒目）
+    hue = (1 - t) * 0.9   # 0.6=蓝, 0=红
+    sat = 0.75
+    val = 0.9
+
+    r, g, b = colorsys.hsv_to_rgb(hue, sat, val)
+    return (int(r*255), int(g*255), int(b*255))
+
+def lerp(a, b, t):
+    return a + (b - a) * t
+
+def size_to_color2(size, min_size, max_size):
+    t = (size - min_size) / (max_size - min_size)
+
+    cold = (70, 120, 200)   # 蓝
+    warm = (220, 90, 60)    # 红橙
+
+    r = int(lerp(cold[0], warm[0], t))
+    g = int(lerp(cold[1], warm[1], t))
+    b = int(lerp(cold[2], warm[2], t))
+
+    return (r, g, b)
+
+
+
+# create angle select
+Orientation = [0,0,-90,90]
+
