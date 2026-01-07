@@ -270,9 +270,9 @@ topic_masks = {
     "good": "masks/heart.png",
 }
 
-def select_mask(arg,weights):
-    if arg.mask:
-        return arg.mask
+def select_mask(mask_path,weights):
+    if mask_path:
+        return mask_path
     else:
         # select the most weighted word as the topic word
         weights = list(weights.items())

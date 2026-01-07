@@ -81,7 +81,7 @@ def main():
     # use multi-factor weights
     weights = compute_weights(counts,total)
 
-    mask = select_mask(arg,weights)
+    mask = select_mask(arg.mask,weights)
     # weights = {word: count / total for word,count in counts.items()}
 
     words = []
