@@ -1,8 +1,8 @@
 # python main.py or python main.py --file input.txt
-from new_version.layout1 import layout_words
-from new_version.input1 import get_user_input,find,remove ,compute_counts,compute_weights
+from layout1 import layout_words
+from input1 import get_user_input,find,remove ,compute_counts,compute_weights
 from PIL import Image,ImageDraw,ImageFont
-from new_version.style1 import select_font_sizes,select_angle,get_font,size_to_color,select_mask
+from style1 import select_font_sizes,select_angle,get_font,size_to_color,select_mask
 
 WIDTH =  1600
 HEIGHT = 1600

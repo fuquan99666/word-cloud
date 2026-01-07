@@ -1,7 +1,7 @@
 ## for look
-from new_version.raster import rasterize_text
-from new_version.sprite import raster_to_sprite
-from new_version.board import Board
+from raster import rasterize_text
+from sprite import raster_to_sprite
+from board import Board
 
 word1 = 'fuck you :'
 word2 = 'jello'

@@ -1,6 +1,15 @@
 # in this file , we create a streamlit app to run the word cloud generator 
 import streamlit as st
-from new_version.main import generate_word_cloud_from_text
+
+import sys
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+new_version_path = os.path.join(current_dir, 'new_version')
+
+if new_version_path not in sys.path:
+    sys.path.append(new_version_path)
+from new_version.main1 import generate_word_cloud_from_text
 
 st.title("Word Cloud Generator")
 st.header("Generate a word cloud from your input text.")

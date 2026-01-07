@@ -1,7 +1,7 @@
 # in this file ,we convert text to pixels and handle rotate here
 
 from PIL import Image, ImageDraw, ImageFont
-from new_version.style1 import get_font
+from style1 import get_font
 import numpy as np
 import math
 

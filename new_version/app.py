@@ -1,6 +1,6 @@
 # in this file , we create a streamlit app to run the word cloud generator 
 import streamlit as st
-from new_version.main import generate_word_cloud_from_text
+from new_version.main1 import generate_word_cloud_from_text
 
 st.title("Word Cloud Generator")
 st.header("Generate a word cloud from your input text.")

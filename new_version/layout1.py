@@ -1,11 +1,11 @@
 # layout.py
-from new_version.raster import rasterize_text
-from new_version.sprite import raster_to_sprite
-from new_version.board import Board
-from new_version.placer import place_sprite
+from raster import rasterize_text
+from sprite import raster_to_sprite
+from board import Board
+from placer import place_sprite
 from PIL import Image
 import numpy as np
-from new_version.style1 import convert_transparent_to_mask
+from style1 import convert_transparent_to_mask
 
 
 def layout_words(words, font_path, size=(800, 800),mask=None):
