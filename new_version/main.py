@@ -33,10 +33,10 @@ def generate_word_cloud_from_text(input_text, mask_path=None, line_mode=False, z
         rotate = select_angle(-60,60,5)
         words.append({"text": word, "size": size, "rotate": rotate})
     if zn_mode:
-        font = FONT1
+        Font = FONT1
     else:
-        font = FONT
-    result = layout_words(words, font, size=(WIDTH, HEIGHT),mask=mask)
+        Font = FONT
+    result = layout_words(words, Font, size=(WIDTH, HEIGHT),mask=mask)
 
     # paint the result in the canvas
     canvas = Image.new("RGB", (WIDTH, HEIGHT), (255, 255, 255))
@@ -49,7 +49,7 @@ def generate_word_cloud_from_text(input_text, mask_path=None, line_mode=False, z
         rotate = w["rotate"]
         color = size_to_color(size,20,85)
 
-        font = get_font(FONT, size)
+        font = get_font(Font, size)
 
         # Create temporary transparent image
         bbox = font.getbbox(text)
