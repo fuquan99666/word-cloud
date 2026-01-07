@@ -20,6 +20,7 @@ mask_file = st.file_uploader(
     "Optional: Upload a mask image",
     type=["png", "jpg", "jpeg"]
 )
+zn_mode = st.checkbox("NOTICE!!!! if you use Chinese, click here!", value=False)
 line_mode = st.checkbox("Line mode (treat each line as a separate word)", value=False)
 max_num = st.number_input("Maximum number of words to include in the word cloud:", min_value=100, max_value=2000, value=800, step=100)
 
@@ -28,6 +29,13 @@ if st.button("Generate Word Cloud"):
         st.warning("Please enter some text or upload a text file.")
     else:
         with st.spinner("Generating word cloud..."):
-            word_cloud_image = generate_word_cloud_from_text(text, mask_file, line_mode, max_num)
+            word_cloud_image = generate_word_cloud_from_text(text, mask_file, line_mode, zn_mode,max_num)
             st.image(word_cloud_image, caption="Generated Word Cloud", use_column_width=True)
             st.success("Word cloud generated!")
+            st.download_button(
+                label="Download Word Cloud",
+                data=word_cloud_image.tobytes() if 'word_cloud_image' in locals() else None,
+                file_name="word_cloud.png",
+                mime="image/png"
+            )
+

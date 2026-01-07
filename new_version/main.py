@@ -9,10 +9,11 @@ HEIGHT = 1600
 # FONT = "/System/Library/Fonts/Arial Unicode.ttf"
 # FONT = "/System/Library/Fonts/Supplemental/Impact.ttf"
 FONT = "Fonts/Impact.ttf"
+FONT1 = "Fonts/Arial Unicode.ttf"
 
 import argparse
 
-def generate_word_cloud_from_text(input_text, mask_path=None, line_mode=False, max_num=800):
+def generate_word_cloud_from_text(input_text, mask_path=None, line_mode=False, zn_mode=False,max_num=800):
     processed_input = find(input_text,line_mode)
 
     to_remove = ['the', 'is', 'and', 'a', 'an', 'in', 'on', 'at', 'of', 'for', 'to', 'with']
@@ -31,8 +32,11 @@ def generate_word_cloud_from_text(input_text, mask_path=None, line_mode=False, m
         size = font_sizes[word]
         rotate = select_angle(-60,60,5)
         words.append({"text": word, "size": size, "rotate": rotate})
-    
-    result = layout_words(words, FONT, size=(WIDTH, HEIGHT),mask=mask)
+    if zn_mode:
+        font = FONT1
+    else:
+        font = FONT
+    result = layout_words(words, font, size=(WIDTH, HEIGHT),mask=mask)
 
     # paint the result in the canvas
     canvas = Image.new("RGB", (WIDTH, HEIGHT), (255, 255, 255))
