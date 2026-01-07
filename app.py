@@ -32,9 +32,14 @@ if st.button("Generate Word Cloud"):
             word_cloud_image = generate_word_cloud_from_text(text, mask_file, line_mode, zn_mode,max_num)
             st.image(word_cloud_image, caption="Generated Word Cloud", use_column_width=True)
             st.success("Word cloud generated!")
+            import io
+            buf = io.BytesIO()
+            word_cloud_image.save(buf, format="PNG")
+            buf.seek(0)
+
             st.download_button(
                 label="Download Word Cloud",
-                data=word_cloud_image.tobytes() if 'word_cloud_image' in locals() else None,
+                data=buf,
                 file_name="word_cloud.png",
                 mime="image/png"
             )
