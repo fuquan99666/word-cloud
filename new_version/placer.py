@@ -1,5 +1,5 @@
 # placer.py
-from spiral1 import ArchimedeanSpiral
+from .spiral1 import ArchimedeanSpiral
 
 
 def place_sprite(board, sprite,word ,cx, cy, max_steps=6500):
