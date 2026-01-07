@@ -1,7 +1,7 @@
 # python main.py or python main.py --file input.txt
-from src.input import get_user_input,find,remove ,compute_weights
-from utils.style import select_font_sizes,create_canvas
-from src.layout import layout 
+from input import get_user_input,find,remove ,compute_weights
+from style import select_font_sizes,create_canvas
+from layout import layout 
 
 
 def main():
