@@ -1,9 +1,13 @@
 # word-cloud
 ## implement a wordcloud generation as a vci project
 
-## You should know although python has a wordcloud library, no one has lanuched a wordcloud generation from scratch with python in github, heihei.
+## You should know although python has a wordcloud library, no one has lanuched a wordcloud generation from scratch with python in github, strange.
+#### 我收回上面的话，其实官方确实有一个wordcloud的仓库，第一次搜索的时候忘记空格了，🌿，但我认为还是有educational value的🤣
 
-## How it works (learn these skills from the https://s3.amazonaws.com/static.mrfeinberg.com/bv_ch03.pdf)
+### How it works?
+please refer to my [blog](https://fuquan99666.github.io/p/a-simple-wordcloud-with-python/) for more details.
+
+<!-- ## How it works (learn these skills from the https://s3.amazonaws.com/static.mrfeinberg.com/bv_ch03.pdf)
 ### 1. Finding words
 When users upload a text file, we use a regular expression to find all the words.
 ### 2. Determine the script 
@@ -21,9 +25,9 @@ we use the count of each word as its weight.
 create a space to place the words
 
 ### 7. Placing the words by a spiral
-we use an Archimedean spiral to place the words.
+we use an Archimedean spiral to place the words. -->
 
-### 使用方法
+### 使用方法 (how to use it)
 ```bash
 python new_version/main1.py --file input.txt 
 ```
@@ -36,7 +40,7 @@ python new_version/main1.py --file input.txt
 
 
 
-### current status
+<!-- ### current status
 ```
 I have basically implemented all the steps mentioned above.
 We can upload a text file and generate a word cloud image.
@@ -73,4 +77,4 @@ to do list:
 5. maybe a ui ? （streamlit?）
 And 1-4 is related to the input text, so let's start.
 By the way,I added a --max_num argument to limit the number of words in the word cloud.
-```
+``` -->
