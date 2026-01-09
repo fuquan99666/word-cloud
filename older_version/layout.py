@@ -1,7 +1,7 @@
 # in this file we try to layout the words on the canvas
-from src.spiral import ArchimedeanSpiral
-from src.collision import collide
-from utils.style import get_font,size_to_color,Orientation
+from spiral import ArchimedeanSpiral
+from collision import collide
+from style import get_font,size_to_color,Orientation
 import random,math
 from PIL import Image, ImageDraw, ImageFont
 

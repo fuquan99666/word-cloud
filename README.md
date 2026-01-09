@@ -23,6 +23,18 @@ create a space to place the words
 ### 7. Placing the words by a spiral
 we use an Archimedean spiral to place the words.
 
+### 使用方法
+```bash
+python new_version/main1.py --file input.txt 
+```
+> --file: 选择输入的文本文件路径
+> --mask: 选择遮罩图片路径（可选）
+> --max_num: 选择最大词数（可选，默认800）
+> --line: 是否提取整行作为词云单元（可选，默认否）
+> --output: 输出图片文件路径（可选，默认output.png）
+> 注意输入含有中文时，请确保字体使用支持中文的字体，如Arial Unicode.ttf
+
+
 
 ### current status
 ```

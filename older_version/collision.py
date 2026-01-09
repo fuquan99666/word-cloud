@@ -1,5 +1,5 @@
 # this file try to detect if the new word collides with the boundary and other words(placed)
-from utils.style import get_font
+from style import get_font
 
 # now we should think about the direction of the word
 

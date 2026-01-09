@@ -72,6 +72,7 @@ def main():
     parser.add_argument('--mask', type=str,default=None, help='Mask image file path')
     parser.add_argument('--line',action='store_true',help='Whether to treat each line as a separate word')
     parser.add_argument('--max_num',type=int,default=800,help='Maximum number of words to include in the word cloud')
+    parser.add_argument('--output',type=str,default='output.png',help='Output image file path')
     arg = parser.parse_args()
 
     input= get_user_input(arg)
@@ -128,7 +129,7 @@ def main():
     #     canvas.save(f"output_{mask}")
     # else:
     #     canvas.save("output.png")
-    # canvas.save("temp_output.png")
+    canvas.save(arg.output)
 
 if __name__ == "__main__":
     main()

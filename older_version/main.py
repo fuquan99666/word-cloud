@@ -37,7 +37,7 @@ def main():
     #     print(f"{word}: {size}")
 
     # next, generate special canvas or area to draw the words (we can use the canvas we like)
-    canvas = create_canvas(width=2000, height=1600, color=(255, 255, 255), file_path=None,threshold=50)
+    canvas = create_canvas(width=2400, height=2000, color=(255, 255, 255), file_path=None,threshold=50)
     #print("Canvas created.")
     # canvas.show()
 
@@ -47,7 +47,7 @@ def main():
 
     # finally, output the result 
     canvas.show()
-    # canvas.save("word_cloud_output.png")
+    canvas.save("old_version.png")
 
 if __name__ == "__main__":
     main()
