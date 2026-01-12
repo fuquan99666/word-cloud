@@ -1,22 +1,28 @@
 ## for look
 from raster import rasterize_text
 from sprite import raster_to_sprite
+from PIL import Image
 from board import Board
+from numpy import np
 
-word1 = 'fuck you :'
+word1 = "Friends don't lie"
 word2 = 'jello'
 
-board = Board(128,200)
+board = Board(180,30)
 
 
-mask1 = rasterize_text(word1, "/Library/Fonts/Arial Unicode.ttf", 30, rotate=0)
-mask2 = rasterize_text(word2, "/Library/Fonts/Arial Unicode.ttf", 30, rotate=0)
+mask1 = rasterize_text(word1, "/Library/Fonts/Arial Unicode.ttf", 22, rotate=0)
+# mask2 = rasterize_text(word2, "/Library/Fonts/Arial Unicode.ttf", 30, rotate=0)
+
+# save the mask
+save_img = Image.fromarray((mask1 * 255).astype(np.uint8))
+save_img.save(f"temp.png")
 
 sprite1 = raster_to_sprite(mask1)
-sprite2 = raster_to_sprite(mask2)
+# sprite2 = raster_to_sprite(mask2)
 
 board.place(sprite1,0,0)
-board.place(sprite2,0,100)
+# board.place(sprite2,0,100)
 
 board.print_board()
 
